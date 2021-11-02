@@ -1,0 +1,41 @@
+<div class="main">
+    <div class="m-5 justify-content: center">
+        <div>Points: {{counter}}</div>
+    </div>
+    <div class="row m-2" *ngFor="let skill of skills">
+        <div class="col-2">{{skill.mainSkillName}}: {{skill.mainSkillValue}}</div>
+        <div class="col-1">
+            <button (click)="increment(skill.id)">+</button>
+            <button (click)="decrement(skill.id)">-</button>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="col-4">
+            <div class="mb-4">Physical pionts: {{phyPoints}}</div>
+            <div *ngFor="let skill of subSkillsPhysical">
+                <div>{{skill.skillName}}: {{skill.value}}</div>
+                <button (click)="subIncrementPhy(skill.id)">+</button>
+                <button (click)="subDecrementPhy(skill.id)">-</button>
+                <br><br>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-4">Mental pionts: {{menPoints}}</div>
+            <div *ngFor="let skill of subSkillsMental">
+                <div>{{skill.skillName}}: {{skill.value}}</div>
+                <button (click)="subIncrementMen(skill.id)">+</button>
+                <button (click)="subDecrementMen(skill.id)">-</button>
+                <br><br>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-4">Spirit pionts: {{spiPoints}}</div>
+            <div *ngFor="let skill of subSkillsSpirit">
+                <div>{{skill.skillName}}: {{skill.value}}</div>
+                <button (click)="subIncrementSpi(skill.id)">+</button>
+                <button (click)="subDecrementSpi(skill.id)">-</button>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>
